@@ -18,9 +18,9 @@ app.get('/', (req, res) =>{
 })
 
 app.post('/api/users', async (req, res)=>{
-    const { name } = req.body
+    const { name, email } = req.body
     try{
-        const result = await db.saveUser(name)
+        const result = await db.saveUser(name, email)
         res.json({id: result.insertId})
     }catch(err){
         res.status(500).send(err)

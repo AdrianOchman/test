@@ -10,11 +10,11 @@ const pool = mariadb.createPool({
     database: process.env.DB
 })
 
-async function saveUser(name){
+async function saveUser(name, email){
     let conn
     try{
         conn = await pool.getConnection()
-        const result = await conn.query("INSERT INRO users (name, email) VALUES (?, ?)", [name])
+        const result = await conn.query("INSERT INRO users (name, email) VALUES (?, ?)", [name, email])
         return result
     }catch(err){
         throw err

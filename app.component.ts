@@ -9,7 +9,8 @@ import { response } from 'express';
 })
 export class AppComponent {
   userForm = {
-    name: ''
+    name: '',
+    email: ''
   }
 
   constructor(private dataService: DataService){}

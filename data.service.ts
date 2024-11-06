@@ -10,7 +10,7 @@ export class DataService {
 
   constructor(private http: HttpClient) {}
 
-  saveUser(userData: {name:string}): Observable<any> {
+  saveUser(userData: {name:string, email:string}): Observable<any> {
       return this.http.post(`${this.apiURL}/users`, userData)
   }
 }

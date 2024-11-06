@@ -1,7 +1,8 @@
 <main class="main">
-  <form (ngSubmit)="onSubmit" #userForm="ngForm">
-      <input type="text" name="name" [(ngModel)]="userForm.name">
-      <button type="submit" value="Save"></button>
+  <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+      <input type="text" name="name" ngModel required #name="ngModel">
+      <input type="email" name="email" ngModel required #email="ngModel">
+      <button type="submit" value="Save">Save</button>
   </form>
 </main>
 
