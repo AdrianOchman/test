@@ -1,7 +1,19 @@
-Sure, here are the patterns:
+import sys
+from PyQt6.QtWidgets import QApplication, QMainWindow
 
-1. **Only Text**: `^[a-zA-Z]+$`  
-2. **Only Digits**: `^\d+$`  
-3. **Email**: `^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$`  
+# Import the generated UI class
+from ui_mainwindow import Ui_MainWindow
 
-os.path.join(os.path.dirname(__file__), "logo.png")
+class MainWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        
+        # Set up the user interface from the generated class
+        self.ui = Ui_MainWindow()
+        self.ui.setupUi(self)
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    window = MainWindow()
+    window.show()
+    sys.exit(app.exec())
